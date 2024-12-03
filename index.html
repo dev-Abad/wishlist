@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wishlist</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      color: #333;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      margin: 10px 0;
+      padding: 10px;
+      background-color: #eee;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    li:hover {
+      background-color: #ddd;
+    }
+    #result {
+      margin-top: 20px;
+      color: #007b5e;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Nona's Wishlist</h1>
+  <p>CHOOSE FROM THE CHOICES BELOW TO SEE INSTRUCTIONS</p>
+  <ul id="wishlist">
+    <li data-item="yellow pillow">Yellow Pillow</li>
+    <li data-item="duck/penguin stuffed toy">Duck/Penguin Stuffed Toy</li>
+    <li data-item="red cardigan">Red Cardigan (L)</li>
+    <li data-item="decide">Can't Decide?</li>
+  </ul>
+  <p id="result"></p>
+  <script>
+    // Get all list items and the result display element
+    const items = document.querySelectorAll("#wishlist li");
+    const result = document.getElementById("result");
+
+    // Add click event to each list item
+    items.forEach(item => {
+      item.addEventListener("click", () => {
+        const selectedItem = item.getAttribute("data-item");
+        if (selectedItem === "yellow pillow") {
+          result.textContent = "Dapat yung Malambot na pahaba kasi yayakapin ko sa pagtulog yan :) ";
+        } else if (selectedItem === "duck/penguin stuffed toy") {
+          result.textContent = "Dapat yung malambot yung feeling na maliliit ang styro na nasa loob kasi mas malabot yun";
+        } else if (selectedItem === "red cardigan") {
+          result.textContent = "Dapat dalawa, yung isa RED yung isa CREAM";
+        }
+          else if (selectedItem === "decide") {
+          result.textContent = "CASH NALANG AKO NA BIBILI :)";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
